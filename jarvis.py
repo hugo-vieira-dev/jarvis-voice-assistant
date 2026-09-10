@@ -118,14 +118,14 @@ def ouvir_microfone():
             return ""
 
 def loop_conversacao():
-    falar(f"Microfone ativo e inteligência conectada, senhor {NOME_USUARIO}.")
+    falar(f"Microfone ativo e inteligência conectada senhor {NOME_USUARIO}.")
     while True:
         try:
             pergunta = ouvir_microfone()
             
             if pergunta:
                 if pergunta.lower() in ["sair", "desligar", "fechar", "encerrar"]:
-                    falar("Encerrando sistemas. Até logo, senhor.")
+                    falar("Encerrando sistemas. Até logo senhor.")
                     os._exit(0)
                 
                 resposta = obter_resposta_claude(pergunta)
@@ -159,7 +159,7 @@ class JarvisVideoAvatar(QWidget):
 
     def keyPressEvent(self, event: QKeyEvent):
         if event.key() == Qt.Key_Escape:
-            falar("Interface visual encerrada, senhor.")
+            falar(f"Encerrando Interface visual senhor {NOME_USUARIO}")
             os._exit(0)
 
     def update_frame(self):
